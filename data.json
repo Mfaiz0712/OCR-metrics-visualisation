@@ -1,0 +1,2842 @@
+{
+  "gt_text": "۱۷\nکہ اس نے صحیح معنوں میں ماں کو پلنگ پر بٹھا دیا تھا اور ساری ذمہ داریاں خود سنبھال لی\nتھیں۔ اس کی امی ہنستیں اور کہتیں ۔\nشمع بیٹی ! ہماری اتنی عادتیں خراب نہ کرو بھئی ! جب تم اپنے گھر چلی جاؤ گی تو پھر\nوہی مثل ہم پر صادق آئے گی کہ لڑکی کی ماں رانی ، بڑھاپے میں بھرے پانی ۔“\nشمع دھیرے سے مسکراتی اور کہتی ۔ امی ! بڑھاپے کا تو ہمیں پتہ نہیں مگر ابھی تو\nآپ لڑکی کی ماں رانی بنی رہیے\nایسی سعادت مند اور سلیقہ مند لڑکیاں تو قسمت والی ماں کے گھر ہی جنم لیتی ہیں۔\nگھر کے ہر فرد کے لبوں پر ہر وقت شمع کا نام رہتا ہے۔ جب اس نے بائیسویں سال میں\nقدم رکھا تو اس کے گھر رشتوں کی بوچھار ہوگئی ، ان تمام رشتوں میں سے محض ایک رشتہ\nچننا ان لوگوں کے لیے مشکل ہو گیا۔ کچھ رشتے دولت مندوں کے تھے اور کچھ زیادہ پڑھے\nلکھے لڑکوں کے ۔ کچھ کی خصوصیت یہ تھی کہ ان کے ارد گرد لمبی چوڑی ذمہ داریاں نہیں تھیں\nاور کچھ شکل وصورت میں یکتا تھے۔ کوئی بھی ایسا نہ تھا کہ اسے مسترد کرتے وقت اس کی کسی\nخوبی کی وجہ سے دکھ نہ ہو رہا ہو۔ بہت چھان پھٹک کے بعد والدین نے شمع کے لیے ایک\nرشتے طے کر ہی دیا۔ اور پھر شمع بھی زندگی کے انجانے سفر پر افضال کے ساتھ روانہ\nہوگئی ۔ افضال کی وجاہت اور کامیاب وکالت نے شمع کے والد کو متاثر کیا تھا۔ ایک بڑی\nخوبی یہ بھی تھی کہ ان کی لاڈلی انہیں کے شہر میں رہتی ۔ شمع بھی مسرور تھی کہ درست وقت پر\nدرست انتخاب کر کے اس کے والدین نے اس پر بڑا کرم کیا ہے۔ سفر حیات کی اونچی نیچی\nکھائیاں پاٹتی اور افضال کے ساتھ ساتھ آگے بڑھنے کا عزم وہ اپنے ساتھ لائی تھی۔ لیکن\nابھی تو کتاب زندگی کا پہلا پیرا گراف بھی وہ ختم نہ کر پائی تھی کہ افضال کے برتاؤ میں ہلکی\nسی تبدیلی محسوس کرنے لگی۔ پہلے تو اسے خیال آیا کہ یہ شاید اس کا واہمہ ہو لیکن پھر ذرا غور",
+  "models": {
+    "Qwen2.5-VL": {
+      "metrics": {
+        "crr": 68.29,
+        "wrr": 39.5,
+        "ooo_word_precision": 51.33,
+        "ooo_word_recall": 48.07,
+        "ooo_word_f1": 49.64
+      },
+      "diff": [
+        {
+          "text": "کراس",
+          "type": "wrong",
+          "gt": "۱۷ کہ اس"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "صبح معنون",
+          "type": "wrong",
+          "gt": "صحیح معنوں"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "مان",
+          "type": "wrong",
+          "gt": "ماں"
+        },
+        {
+          "text": "کو",
+          "type": "correct",
+          "gt": "کو"
+        },
+        {
+          "text": "پلیگ",
+          "type": "wrong",
+          "gt": "پلنگ"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "بھادیا",
+          "type": "wrong",
+          "gt": "بٹھا دیا"
+        },
+        {
+          "text": "تھا",
+          "type": "correct",
+          "gt": "تھا"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "ساری",
+          "type": "correct",
+          "gt": "ساری"
+        },
+        {
+          "text": "ذمہ",
+          "type": "correct",
+          "gt": "ذمہ"
+        },
+        {
+          "text": "داریان",
+          "type": "wrong",
+          "gt": "داریاں"
+        },
+        {
+          "text": "خود",
+          "type": "correct",
+          "gt": "خود"
+        },
+        {
+          "text": "سنچال",
+          "type": "wrong",
+          "gt": "سنبھال"
+        },
+        {
+          "text": "لی",
+          "type": "correct",
+          "gt": "لی"
+        },
+        {
+          "text": "تحصین -",
+          "type": "wrong",
+          "gt": "تھیں۔"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "ای، بنستیس",
+          "type": "wrong",
+          "gt": "امی ہنستیں"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کمیتیس - \"سمح بیئی! اہمی اتی",
+          "type": "wrong",
+          "gt": "کہتیں ۔ شمع بیٹی ! ہماری اتنی"
+        },
+        {
+          "text": "عادتیں",
+          "type": "correct",
+          "gt": "عادتیں"
+        },
+        {
+          "text": "خراب",
+          "type": "correct",
+          "gt": "خراب"
+        },
+        {
+          "text": "نہ",
+          "type": "correct",
+          "gt": "نہ"
+        },
+        {
+          "text": "کرو۔ کچھ!",
+          "type": "wrong",
+          "gt": "کرو بھئی !"
+        },
+        {
+          "text": "جب",
+          "type": "correct",
+          "gt": "جب"
+        },
+        {
+          "text": "تم",
+          "type": "correct",
+          "gt": "تم"
+        },
+        {
+          "text": "اپنے",
+          "type": "correct",
+          "gt": "اپنے"
+        },
+        {
+          "text": "گھر",
+          "type": "correct",
+          "gt": "گھر"
+        },
+        {
+          "text": "پلی جاوے",
+          "type": "wrong",
+          "gt": "چلی جاؤ"
+        },
+        {
+          "text": "گی",
+          "type": "correct",
+          "gt": "گی"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "توبہ و،ی مشل، تهم",
+          "type": "wrong",
+          "gt": "پھر وہی مثل ہم"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "صادق",
+          "type": "correct",
+          "gt": "صادق"
+        },
+        {
+          "text": "آ سے",
+          "type": "wrong",
+          "gt": "آئے"
+        },
+        {
+          "text": "گی",
+          "type": "correct",
+          "gt": "گی"
+        },
+        {
+          "text": "کر لکی",
+          "type": "wrong",
+          "gt": "کہ لڑکی"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "مان رانی، بر حاضر پی",
+          "type": "wrong",
+          "gt": "ماں رانی ، بڑھاپے"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "بھرے",
+          "type": "correct",
+          "gt": "بھرے"
+        },
+        {
+          "text": "پانی، مشع دہیرے",
+          "type": "wrong",
+          "gt": "پانی ۔“ شمع دھیرے"
+        },
+        {
+          "text": "سے",
+          "type": "correct",
+          "gt": "سے"
+        },
+        {
+          "text": "مسكرانی",
+          "type": "wrong",
+          "gt": "مسکراتی"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کمیتی - \"ای! بر حاضر پی",
+          "type": "wrong",
+          "gt": "کہتی ۔ امی ! بڑھاپے"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "تهمیس پیتے",
+          "type": "wrong",
+          "gt": "ہمیں پتہ"
+        },
+        {
+          "text": "نہیں",
+          "type": "correct",
+          "gt": "نہیں"
+        },
+        {
+          "text": "گمر انجی",
+          "type": "wrong",
+          "gt": "مگر ابھی"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "آپ",
+          "type": "correct",
+          "gt": "آپ"
+        },
+        {
+          "text": "\"لکی",
+          "type": "wrong",
+          "gt": "لڑکی"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "مان",
+          "type": "wrong",
+          "gt": "ماں"
+        },
+        {
+          "text": "رانی",
+          "type": "correct",
+          "gt": "رانی"
+        },
+        {
+          "text": "بی ریے\" ایک",
+          "type": "wrong",
+          "gt": "بنی رہیے ایسی"
+        },
+        {
+          "text": "سعادت",
+          "type": "correct",
+          "gt": "سعادت"
+        },
+        {
+          "text": "مند",
+          "type": "correct",
+          "gt": "مند"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "سلیقہ",
+          "type": "correct",
+          "gt": "سلیقہ"
+        },
+        {
+          "text": "مندل کیان",
+          "type": "wrong",
+          "gt": "مند لڑکیاں"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "تقسیم",
+          "type": "wrong",
+          "gt": "قسمت"
+        },
+        {
+          "text": "والی",
+          "type": "correct",
+          "gt": "والی"
+        },
+        {
+          "text": "مان",
+          "type": "wrong",
+          "gt": "ماں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "گمر، ی",
+          "type": "wrong",
+          "gt": "گھر ہی"
+        },
+        {
+          "text": "جنم",
+          "type": "correct",
+          "gt": "جنم"
+        },
+        {
+          "text": "لیئی چین - گمر",
+          "type": "wrong",
+          "gt": "لیتی ہیں۔ گھر"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "ہر",
+          "type": "correct",
+          "gt": "ہر"
+        },
+        {
+          "text": "فرد",
+          "type": "correct",
+          "gt": "فرد"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "لبون",
+          "type": "wrong",
+          "gt": "لبوں"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "ہر",
+          "type": "correct",
+          "gt": "ہر"
+        },
+        {
+          "text": "وقت",
+          "type": "correct",
+          "gt": "وقت"
+        },
+        {
+          "text": "سمتع",
+          "type": "wrong",
+          "gt": "شمع"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "نام",
+          "type": "correct",
+          "gt": "نام"
+        },
+        {
+          "text": "رہتا",
+          "type": "correct",
+          "gt": "رہتا"
+        },
+        {
+          "text": "ہے -",
+          "type": "wrong",
+          "gt": "ہے۔"
+        },
+        {
+          "text": "جب",
+          "type": "correct",
+          "gt": "جب"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "باکیسوی",
+          "type": "wrong",
+          "gt": "بائیسویں"
+        },
+        {
+          "text": "سال",
+          "type": "correct",
+          "gt": "سال"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "قدم",
+          "type": "correct",
+          "gt": "قدم"
+        },
+        {
+          "text": "رکھا",
+          "type": "correct",
+          "gt": "رکھا"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "گمر رشتون میں",
+          "type": "wrong",
+          "gt": "گھر رشتوں کی بوچھار ہوگئی ، ان تمام رشتوں"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "سے",
+          "type": "correct",
+          "gt": "سے"
+        },
+        {
+          "text": "محض",
+          "type": "correct",
+          "gt": "محض"
+        },
+        {
+          "text": "ایک",
+          "type": "correct",
+          "gt": "ایک"
+        },
+        {
+          "text": "رشتہ",
+          "type": "correct",
+          "gt": "رشتہ"
+        },
+        {
+          "text": "چناال",
+          "type": "wrong",
+          "gt": "چننا ان"
+        },
+        {
+          "text": "لوگوں",
+          "type": "correct",
+          "gt": "لوگوں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "لی",
+          "type": "wrong",
+          "gt": "لیے"
+        },
+        {
+          "text": "مشکل",
+          "type": "correct",
+          "gt": "مشکل"
+        },
+        {
+          "text": "ہوگیا - پچھر",
+          "type": "wrong",
+          "gt": "ہو گیا۔ کچھ"
+        },
+        {
+          "text": "رشتے",
+          "type": "correct",
+          "gt": "رشتے"
+        },
+        {
+          "text": "دولت",
+          "type": "correct",
+          "gt": "دولت"
+        },
+        {
+          "text": "مندول",
+          "type": "wrong",
+          "gt": "مندوں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "تھا",
+          "type": "wrong",
+          "gt": "تھے"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "پچھر زیادہ پرتے",
+          "type": "extra",
+          "gt": ""
+        },
+        {
+          "text": "کچھ",
+          "type": "correct",
+          "gt": "کچھ"
+        },
+        {
+          "text": "اراکون",
+          "type": "wrong",
+          "gt": "زیادہ پڑھے لکھے لڑکوں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "- پچھر",
+          "type": "wrong",
+          "gt": "۔ کچھ"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "خصوصیت",
+          "type": "correct",
+          "gt": "خصوصیت"
+        },
+        {
+          "text": "پیچھی کرنے کو",
+          "type": "wrong",
+          "gt": "یہ تھی کہ ان کے ارد گرد لمبی چوڑی ذمہ داریاں"
+        },
+        {
+          "text": "نہیں",
+          "type": "correct",
+          "gt": "نہیں"
+        },
+        {
+          "text": "کیتا تھا",
+          "type": "wrong",
+          "gt": "تھیں اور کچھ شکل وصورت میں یکتا تھے۔"
+        },
+        {
+          "text": "کوئی",
+          "type": "correct",
+          "gt": "کوئی"
+        },
+        {
+          "text": "جمی ایمان نہیا کا دے مست در کرے",
+          "type": "wrong",
+          "gt": "بھی ایسا نہ تھا کہ اسے مسترد کرتے"
+        },
+        {
+          "text": "وقت",
+          "type": "correct",
+          "gt": "وقت"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "کسی",
+          "type": "correct",
+          "gt": "کسی"
+        },
+        {
+          "text": "خوبی",
+          "type": "correct",
+          "gt": "خوبی"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "مجبت دکنے تھوڑے بھی -",
+          "type": "wrong",
+          "gt": "وجہ سے دکھ نہ ہو رہا ہو۔"
+        },
+        {
+          "text": "بہت",
+          "type": "correct",
+          "gt": "بہت"
+        },
+        {
+          "text": "پچھر جمی",
+          "type": "wrong",
+          "gt": "چھان پھٹک کے بعد والدین نے شمع کے لیے ایک رشتے طے کر ہی دیا۔ اور پھر شمع بھی"
+        },
+        {
+          "text": "زندگی",
+          "type": "correct",
+          "gt": "زندگی"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "انحیاں",
+          "type": "wrong",
+          "gt": "انجانے"
+        },
+        {
+          "text": "سفر",
+          "type": "correct",
+          "gt": "سفر"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "افضل",
+          "type": "wrong",
+          "gt": "افضال"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "روانہ",
+          "type": "correct",
+          "gt": "روانہ"
+        },
+        {
+          "text": "رشتے ط کر، ی دیا - اور پچھر سمتع جمی زندگی کے والد کومتاثر کیا تھا - ایک برطانی ہوگی - افضل",
+          "type": "wrong",
+          "gt": "ہوگئی ۔ افضال"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "وجہت",
+          "type": "wrong",
+          "gt": "وجاہت"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کامیاب",
+          "type": "correct",
+          "gt": "کامیاب"
+        },
+        {
+          "text": "وکالت",
+          "type": "correct",
+          "gt": "وکالت"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "سمتع",
+          "type": "wrong",
+          "gt": "شمع"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "والد",
+          "type": "correct",
+          "gt": "والد"
+        },
+        {
+          "text": "کومتاثر",
+          "type": "wrong",
+          "gt": "کو متاثر"
+        },
+        {
+          "text": "کیا",
+          "type": "correct",
+          "gt": "کیا"
+        },
+        {
+          "text": "تھا -",
+          "type": "wrong",
+          "gt": "تھا۔"
+        },
+        {
+          "text": "ایک",
+          "type": "correct",
+          "gt": "ایک"
+        },
+        {
+          "text": "برطانی",
+          "type": "wrong",
+          "gt": "بڑی"
+        },
+        {
+          "text": "خوبی",
+          "type": "correct",
+          "gt": "خوبی"
+        },
+        {
+          "text": "ی جمی کران",
+          "type": "wrong",
+          "gt": "یہ بھی تھی کہ ان"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "لا ذلی انبیا",
+          "type": "wrong",
+          "gt": "لاڈلی انہیں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "شہر",
+          "type": "correct",
+          "gt": "شہر"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "رہتی",
+          "type": "correct",
+          "gt": "رہتی"
+        },
+        {
+          "text": "- جمی مسر و رحمی کے",
+          "type": "wrong",
+          "gt": "۔ شمع بھی مسرور تھی کہ"
+        },
+        {
+          "text": "درست",
+          "type": "correct",
+          "gt": "درست"
+        },
+        {
+          "text": "وقت",
+          "type": "correct",
+          "gt": "وقت"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "درس",
+          "type": "wrong",
+          "gt": "درست"
+        },
+        {
+          "text": "انتخاب",
+          "type": "correct",
+          "gt": "انتخاب"
+        },
+        {
+          "text": "کر",
+          "type": "correct",
+          "gt": "کر"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "والدین",
+          "type": "correct",
+          "gt": "والدین"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "برطان",
+          "type": "wrong",
+          "gt": "بڑا"
+        },
+        {
+          "text": "کرم",
+          "type": "correct",
+          "gt": "کرم"
+        },
+        {
+          "text": "کیا",
+          "type": "correct",
+          "gt": "کیا"
+        },
+        {
+          "text": "ہے - سفرجیات",
+          "type": "wrong",
+          "gt": "ہے۔ سفر حیات"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "او پیچی پنچی کمیاں پائی",
+          "type": "wrong",
+          "gt": "اونچی نیچی کھائیاں پاٹتی"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "افضل",
+          "type": "wrong",
+          "gt": "افضال"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "آ گے بہت ہی کاعزم",
+          "type": "wrong",
+          "gt": "آگے بڑھنے کا عزم"
+        },
+        {
+          "text": "وہ",
+          "type": "correct",
+          "gt": "وہ"
+        },
+        {
+          "text": "اپنے",
+          "type": "correct",
+          "gt": "اپنے"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "کلاسی",
+          "type": "wrong",
+          "gt": "لائی تھی۔"
+        },
+        {
+          "text": "لیکن",
+          "type": "correct",
+          "gt": "لیکن"
+        },
+        {
+          "text": "اجمی",
+          "type": "wrong",
+          "gt": "ابھی"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "کتاب",
+          "type": "correct",
+          "gt": "کتاب"
+        },
+        {
+          "text": "زندگی",
+          "type": "correct",
+          "gt": "زندگی"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "پہلا",
+          "type": "correct",
+          "gt": "پہلا"
+        },
+        {
+          "text": "چیراگراف جمی",
+          "type": "wrong",
+          "gt": "پیرا گراف بھی"
+        },
+        {
+          "text": "وہ",
+          "type": "correct",
+          "gt": "وہ"
+        },
+        {
+          "text": "ختم",
+          "type": "correct",
+          "gt": "ختم"
+        },
+        {
+          "text": "نہ",
+          "type": "correct",
+          "gt": "نہ"
+        },
+        {
+          "text": "کر",
+          "type": "correct",
+          "gt": "کر"
+        },
+        {
+          "text": "پائی",
+          "type": "correct",
+          "gt": "پائی"
+        },
+        {
+          "text": "تھی",
+          "type": "correct",
+          "gt": "تھی"
+        },
+        {
+          "text": "کر افضل",
+          "type": "wrong",
+          "gt": "کہ افضال"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "برتاؤ",
+          "type": "correct",
+          "gt": "برتاؤ"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "بلکی ی",
+          "type": "wrong",
+          "gt": "ہلکی سی"
+        },
+        {
+          "text": "تبدیلی",
+          "type": "correct",
+          "gt": "تبدیلی"
+        },
+        {
+          "text": "محسوس",
+          "type": "correct",
+          "gt": "محسوس"
+        },
+        {
+          "text": "کرنے",
+          "type": "correct",
+          "gt": "کرنے"
+        },
+        {
+          "text": "نے گئی - پچھر",
+          "type": "wrong",
+          "gt": "لگی۔ پہلے"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "اسے",
+          "type": "correct",
+          "gt": "اسے"
+        },
+        {
+          "text": "خیال",
+          "type": "correct",
+          "gt": "خیال"
+        },
+        {
+          "text": "آیا",
+          "type": "correct",
+          "gt": "آیا"
+        },
+        {
+          "text": "کر ریشایاس",
+          "type": "wrong",
+          "gt": "کہ یہ شاید اس"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "واہمہ",
+          "type": "correct",
+          "gt": "واہمہ"
+        },
+        {
+          "text": "جو لکین پچھر زراغور",
+          "type": "wrong",
+          "gt": "ہو لیکن پھر ذرا غور"
+        }
+      ]
+    },
+    "PARSeq": {
+      "metrics": {
+        "crr": 91.65,
+        "wrr": 79.83,
+        "ooo_word_precision": 89.64,
+        "ooo_word_recall": 88.4,
+        "ooo_word_f1": 89.01
+      },
+      "diff": [
+        {
+          "text": "---------- Page 1 ----------",
+          "type": "wrong",
+          "gt": "۱۷"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "صحیح",
+          "type": "correct",
+          "gt": "صحیح"
+        },
+        {
+          "text": "معنوں",
+          "type": "correct",
+          "gt": "معنوں"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "ماں",
+          "type": "correct",
+          "gt": "ماں"
+        },
+        {
+          "text": "کو",
+          "type": "correct",
+          "gt": "کو"
+        },
+        {
+          "text": "پلنگ",
+          "type": "correct",
+          "gt": "پلنگ"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "بٹھا",
+          "type": "correct",
+          "gt": "بٹھا"
+        },
+        {
+          "text": "دیا",
+          "type": "correct",
+          "gt": "دیا"
+        },
+        {
+          "text": "تھا",
+          "type": "correct",
+          "gt": "تھا"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "ساری",
+          "type": "correct",
+          "gt": "ساری"
+        },
+        {
+          "text": "ذمہ",
+          "type": "correct",
+          "gt": "ذمہ"
+        },
+        {
+          "text": "دارماں",
+          "type": "wrong",
+          "gt": "داریاں"
+        },
+        {
+          "text": "خود",
+          "type": "correct",
+          "gt": "خود"
+        },
+        {
+          "text": "سنبھال",
+          "type": "correct",
+          "gt": "سنبھال"
+        },
+        {
+          "text": "لی",
+          "type": "correct",
+          "gt": "لی"
+        },
+        {
+          "text": "تھیں ۔",
+          "type": "wrong",
+          "gt": "تھیں۔"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "امی",
+          "type": "correct",
+          "gt": "امی"
+        },
+        {
+          "text": "ہنستیں",
+          "type": "correct",
+          "gt": "ہنستیں"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کہتیں۔ ’\"شمع بیٹی!",
+          "type": "wrong",
+          "gt": "کہتیں ۔ شمع بیٹی !"
+        },
+        {
+          "text": "ہماری",
+          "type": "correct",
+          "gt": "ہماری"
+        },
+        {
+          "text": "اتنی",
+          "type": "correct",
+          "gt": "اتنی"
+        },
+        {
+          "text": "عادتیں",
+          "type": "correct",
+          "gt": "عادتیں"
+        },
+        {
+          "text": "خراب",
+          "type": "correct",
+          "gt": "خراب"
+        },
+        {
+          "text": "نہ",
+          "type": "correct",
+          "gt": "نہ"
+        },
+        {
+          "text": "کرو",
+          "type": "correct",
+          "gt": "کرو"
+        },
+        {
+          "text": "بھئی",
+          "type": "correct",
+          "gt": "بھئی"
+        },
+        {
+          "text": "!",
+          "type": "correct",
+          "gt": "!"
+        },
+        {
+          "text": "جب",
+          "type": "correct",
+          "gt": "جب"
+        },
+        {
+          "text": "تم",
+          "type": "correct",
+          "gt": "تم"
+        },
+        {
+          "text": "اپنے",
+          "type": "correct",
+          "gt": "اپنے"
+        },
+        {
+          "text": "گھر",
+          "type": "correct",
+          "gt": "گھر"
+        },
+        {
+          "text": "چلی",
+          "type": "correct",
+          "gt": "چلی"
+        },
+        {
+          "text": "جاؤ",
+          "type": "correct",
+          "gt": "جاؤ"
+        },
+        {
+          "text": "گی",
+          "type": "correct",
+          "gt": "گی"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "پھر",
+          "type": "correct",
+          "gt": "پھر"
+        },
+        {
+          "text": "وہی",
+          "type": "correct",
+          "gt": "وہی"
+        },
+        {
+          "text": "مثل",
+          "type": "correct",
+          "gt": "مثل"
+        },
+        {
+          "text": "ہم",
+          "type": "correct",
+          "gt": "ہم"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "صادق",
+          "type": "correct",
+          "gt": "صادق"
+        },
+        {
+          "text": "آئے",
+          "type": "correct",
+          "gt": "آئے"
+        },
+        {
+          "text": "گی",
+          "type": "correct",
+          "gt": "گی"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "لڑکی",
+          "type": "correct",
+          "gt": "لڑکی"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "ماں",
+          "type": "correct",
+          "gt": "ماں"
+        },
+        {
+          "text": "رانی،",
+          "type": "wrong",
+          "gt": "رانی ،"
+        },
+        {
+          "text": "بڑھاپے",
+          "type": "correct",
+          "gt": "بڑھاپے"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "بھرے",
+          "type": "correct",
+          "gt": "بھرے"
+        },
+        {
+          "text": "پانی",
+          "type": "correct",
+          "gt": "پانی"
+        },
+        {
+          "text": "۔’’",
+          "type": "wrong",
+          "gt": "۔“"
+        },
+        {
+          "text": "شمع",
+          "type": "correct",
+          "gt": "شمع"
+        },
+        {
+          "text": "دھیرے",
+          "type": "correct",
+          "gt": "دھیرے"
+        },
+        {
+          "text": "سے",
+          "type": "correct",
+          "gt": "سے"
+        },
+        {
+          "text": "مسکراتی",
+          "type": "correct",
+          "gt": "مسکراتی"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کہتی۔ ’’امی! بڑھائے",
+          "type": "wrong",
+          "gt": "کہتی ۔ امی ! بڑھاپے"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "ہمیں",
+          "type": "correct",
+          "gt": "ہمیں"
+        },
+        {
+          "text": "یتہ",
+          "type": "wrong",
+          "gt": "پتہ"
+        },
+        {
+          "text": "نہیں",
+          "type": "correct",
+          "gt": "نہیں"
+        },
+        {
+          "text": "مگر",
+          "type": "correct",
+          "gt": "مگر"
+        },
+        {
+          "text": "ابھی",
+          "type": "correct",
+          "gt": "ابھی"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "آپ",
+          "type": "correct",
+          "gt": "آپ"
+        },
+        {
+          "text": "‘‘",
+          "type": "extra",
+          "gt": ""
+        },
+        {
+          "text": "لڑکی",
+          "type": "correct",
+          "gt": "لڑکی"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "ماں",
+          "type": "correct",
+          "gt": "ماں"
+        },
+        {
+          "text": "رانی",
+          "type": "correct",
+          "gt": "رانی"
+        },
+        {
+          "text": "بنی",
+          "type": "correct",
+          "gt": "بنی"
+        },
+        {
+          "text": "رہیے‘‘",
+          "type": "wrong",
+          "gt": "رہیے"
+        },
+        {
+          "text": "ایسی",
+          "type": "correct",
+          "gt": "ایسی"
+        },
+        {
+          "text": "سعادت",
+          "type": "correct",
+          "gt": "سعادت"
+        },
+        {
+          "text": "مند",
+          "type": "correct",
+          "gt": "مند"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "سلیقہ",
+          "type": "correct",
+          "gt": "سلیقہ"
+        },
+        {
+          "text": "مند",
+          "type": "correct",
+          "gt": "مند"
+        },
+        {
+          "text": "لڑکیاں",
+          "type": "correct",
+          "gt": "لڑکیاں"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "قسمت",
+          "type": "correct",
+          "gt": "قسمت"
+        },
+        {
+          "text": "والی",
+          "type": "correct",
+          "gt": "والی"
+        },
+        {
+          "text": "ماں",
+          "type": "correct",
+          "gt": "ماں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "گھر",
+          "type": "correct",
+          "gt": "گھر"
+        },
+        {
+          "text": "ہی",
+          "type": "correct",
+          "gt": "ہی"
+        },
+        {
+          "text": "جنم",
+          "type": "correct",
+          "gt": "جنم"
+        },
+        {
+          "text": "لیتی",
+          "type": "correct",
+          "gt": "لیتی"
+        },
+        {
+          "text": "ہیں ۔",
+          "type": "wrong",
+          "gt": "ہیں۔"
+        },
+        {
+          "text": "گھر",
+          "type": "correct",
+          "gt": "گھر"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "ہر",
+          "type": "correct",
+          "gt": "ہر"
+        },
+        {
+          "text": "فرد",
+          "type": "correct",
+          "gt": "فرد"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "لیوں",
+          "type": "wrong",
+          "gt": "لبوں"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "ہروقت",
+          "type": "wrong",
+          "gt": "ہر وقت"
+        },
+        {
+          "text": "شمع",
+          "type": "correct",
+          "gt": "شمع"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "نام",
+          "type": "correct",
+          "gt": "نام"
+        },
+        {
+          "text": "رہتا",
+          "type": "correct",
+          "gt": "رہتا"
+        },
+        {
+          "text": "ہے ۔",
+          "type": "wrong",
+          "gt": "ہے۔"
+        },
+        {
+          "text": "جب",
+          "type": "correct",
+          "gt": "جب"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "بائیسویں",
+          "type": "correct",
+          "gt": "بائیسویں"
+        },
+        {
+          "text": "سال",
+          "type": "correct",
+          "gt": "سال"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "قدم",
+          "type": "correct",
+          "gt": "قدم"
+        },
+        {
+          "text": "رکھا",
+          "type": "correct",
+          "gt": "رکھا"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "گھر",
+          "type": "correct",
+          "gt": "گھر"
+        },
+        {
+          "text": "رشتوں",
+          "type": "correct",
+          "gt": "رشتوں"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "بوچھار",
+          "type": "correct",
+          "gt": "بوچھار"
+        },
+        {
+          "text": "ہوگئی",
+          "type": "correct",
+          "gt": "ہوگئی"
+        },
+        {
+          "text": "،",
+          "type": "correct",
+          "gt": "،"
+        },
+        {
+          "text": "ان",
+          "type": "correct",
+          "gt": "ان"
+        },
+        {
+          "text": "تمام",
+          "type": "correct",
+          "gt": "تمام"
+        },
+        {
+          "text": "رشتوں",
+          "type": "correct",
+          "gt": "رشتوں"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "سے",
+          "type": "correct",
+          "gt": "سے"
+        },
+        {
+          "text": "محض",
+          "type": "correct",
+          "gt": "محض"
+        },
+        {
+          "text": "ایک",
+          "type": "correct",
+          "gt": "ایک"
+        },
+        {
+          "text": "رشتہ",
+          "type": "correct",
+          "gt": "رشتہ"
+        },
+        {
+          "text": "چننا",
+          "type": "correct",
+          "gt": "چننا"
+        },
+        {
+          "text": "ان",
+          "type": "correct",
+          "gt": "ان"
+        },
+        {
+          "text": "لوگوں",
+          "type": "correct",
+          "gt": "لوگوں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "لیے",
+          "type": "correct",
+          "gt": "لیے"
+        },
+        {
+          "text": "مشکل",
+          "type": "correct",
+          "gt": "مشکل"
+        },
+        {
+          "text": "ہو",
+          "type": "correct",
+          "gt": "ہو"
+        },
+        {
+          "text": "گیا۔",
+          "type": "correct",
+          "gt": "گیا۔"
+        },
+        {
+          "text": "کچھ",
+          "type": "correct",
+          "gt": "کچھ"
+        },
+        {
+          "text": "رشتے",
+          "type": "correct",
+          "gt": "رشتے"
+        },
+        {
+          "text": "دولت",
+          "type": "correct",
+          "gt": "دولت"
+        },
+        {
+          "text": "مندوں",
+          "type": "correct",
+          "gt": "مندوں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "تھے",
+          "type": "correct",
+          "gt": "تھے"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کچھ",
+          "type": "correct",
+          "gt": "کچھ"
+        },
+        {
+          "text": "زیادہ",
+          "type": "correct",
+          "gt": "زیادہ"
+        },
+        {
+          "text": "بڑھے",
+          "type": "wrong",
+          "gt": "پڑھے"
+        },
+        {
+          "text": "لکھے",
+          "type": "correct",
+          "gt": "لکھے"
+        },
+        {
+          "text": "لڑکوں",
+          "type": "correct",
+          "gt": "لڑکوں"
+        },
+        {
+          "text": "کے۔",
+          "type": "wrong",
+          "gt": "کے ۔"
+        },
+        {
+          "text": "کچھ",
+          "type": "correct",
+          "gt": "کچھ"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "خصوصیت",
+          "type": "correct",
+          "gt": "خصوصیت"
+        },
+        {
+          "text": "یہ",
+          "type": "correct",
+          "gt": "یہ"
+        },
+        {
+          "text": "تھی",
+          "type": "correct",
+          "gt": "تھی"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "ان",
+          "type": "correct",
+          "gt": "ان"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "اردگرد کمبی",
+          "type": "wrong",
+          "gt": "ارد گرد لمبی"
+        },
+        {
+          "text": "چوڑی",
+          "type": "correct",
+          "gt": "چوڑی"
+        },
+        {
+          "text": "ذمہ",
+          "type": "correct",
+          "gt": "ذمہ"
+        },
+        {
+          "text": "داریاں",
+          "type": "correct",
+          "gt": "داریاں"
+        },
+        {
+          "text": "نہیں",
+          "type": "correct",
+          "gt": "نہیں"
+        },
+        {
+          "text": "تھیں",
+          "type": "correct",
+          "gt": "تھیں"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کچھ",
+          "type": "correct",
+          "gt": "کچھ"
+        },
+        {
+          "text": "شکل",
+          "type": "correct",
+          "gt": "شکل"
+        },
+        {
+          "text": "وصورت",
+          "type": "correct",
+          "gt": "وصورت"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "یکتا",
+          "type": "correct",
+          "gt": "یکتا"
+        },
+        {
+          "text": "تھے۔",
+          "type": "correct",
+          "gt": "تھے۔"
+        },
+        {
+          "text": "کوئی",
+          "type": "correct",
+          "gt": "کوئی"
+        },
+        {
+          "text": "بھی",
+          "type": "correct",
+          "gt": "بھی"
+        },
+        {
+          "text": "ایسا",
+          "type": "correct",
+          "gt": "ایسا"
+        },
+        {
+          "text": "نہ",
+          "type": "correct",
+          "gt": "نہ"
+        },
+        {
+          "text": "تھا",
+          "type": "correct",
+          "gt": "تھا"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "اسے",
+          "type": "correct",
+          "gt": "اسے"
+        },
+        {
+          "text": "مسترد",
+          "type": "correct",
+          "gt": "مسترد"
+        },
+        {
+          "text": "کرتے",
+          "type": "correct",
+          "gt": "کرتے"
+        },
+        {
+          "text": "وقت",
+          "type": "correct",
+          "gt": "وقت"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "کسی",
+          "type": "correct",
+          "gt": "کسی"
+        },
+        {
+          "text": "اچھان پھٹک کے بعد والدین نے شمع کے لیے ایک",
+          "type": "extra",
+          "gt": ""
+        },
+        {
+          "text": "خوبی",
+          "type": "correct",
+          "gt": "خوبی"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "وجہ",
+          "type": "correct",
+          "gt": "وجہ"
+        },
+        {
+          "text": "سے",
+          "type": "correct",
+          "gt": "سے"
+        },
+        {
+          "text": "دکھ",
+          "type": "correct",
+          "gt": "دکھ"
+        },
+        {
+          "text": "نہ",
+          "type": "correct",
+          "gt": "نہ"
+        },
+        {
+          "text": "ہو",
+          "type": "correct",
+          "gt": "ہو"
+        },
+        {
+          "text": "رہا",
+          "type": "correct",
+          "gt": "رہا"
+        },
+        {
+          "text": "ہو۔",
+          "type": "correct",
+          "gt": "ہو۔"
+        },
+        {
+          "text": "بہت",
+          "type": "correct",
+          "gt": "بہت"
+        },
+        {
+          "text": "چھان پھٹک کے بعد والدین نے شمع کے لیے ایک",
+          "type": "missing",
+          "gt": "چھان پھٹک کے بعد والدین نے شمع کے لیے ایک"
+        },
+        {
+          "text": "رشتے",
+          "type": "correct",
+          "gt": "رشتے"
+        },
+        {
+          "text": "طے",
+          "type": "correct",
+          "gt": "طے"
+        },
+        {
+          "text": "کر",
+          "type": "correct",
+          "gt": "کر"
+        },
+        {
+          "text": "ہی",
+          "type": "correct",
+          "gt": "ہی"
+        },
+        {
+          "text": "دیا۔",
+          "type": "correct",
+          "gt": "دیا۔"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "پھر",
+          "type": "correct",
+          "gt": "پھر"
+        },
+        {
+          "text": "شمع",
+          "type": "correct",
+          "gt": "شمع"
+        },
+        {
+          "text": "بھی",
+          "type": "correct",
+          "gt": "بھی"
+        },
+        {
+          "text": "زندگی",
+          "type": "correct",
+          "gt": "زندگی"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "انجانے",
+          "type": "correct",
+          "gt": "انجانے"
+        },
+        {
+          "text": "سفر",
+          "type": "correct",
+          "gt": "سفر"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "افضال",
+          "type": "correct",
+          "gt": "افضال"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "روانہ",
+          "type": "correct",
+          "gt": "روانہ"
+        },
+        {
+          "text": "ہوگئی۔",
+          "type": "wrong",
+          "gt": "ہوگئی ۔"
+        },
+        {
+          "text": "افضال",
+          "type": "correct",
+          "gt": "افضال"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "وجاہت",
+          "type": "correct",
+          "gt": "وجاہت"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "کامیاب",
+          "type": "correct",
+          "gt": "کامیاب"
+        },
+        {
+          "text": "وکالت",
+          "type": "correct",
+          "gt": "وکالت"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "شمع",
+          "type": "correct",
+          "gt": "شمع"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "والد",
+          "type": "correct",
+          "gt": "والد"
+        },
+        {
+          "text": "کو",
+          "type": "correct",
+          "gt": "کو"
+        },
+        {
+          "text": "متاثر",
+          "type": "correct",
+          "gt": "متاثر"
+        },
+        {
+          "text": "کیا",
+          "type": "correct",
+          "gt": "کیا"
+        },
+        {
+          "text": "تھا۔",
+          "type": "correct",
+          "gt": "تھا۔"
+        },
+        {
+          "text": "ایک",
+          "type": "correct",
+          "gt": "ایک"
+        },
+        {
+          "text": "بڑی",
+          "type": "correct",
+          "gt": "بڑی"
+        },
+        {
+          "text": "خوبی",
+          "type": "correct",
+          "gt": "خوبی"
+        },
+        {
+          "text": "یہ",
+          "type": "correct",
+          "gt": "یہ"
+        },
+        {
+          "text": "بھی",
+          "type": "correct",
+          "gt": "بھی"
+        },
+        {
+          "text": "تھی",
+          "type": "correct",
+          "gt": "تھی"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "ان",
+          "type": "correct",
+          "gt": "ان"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "لاڈلی",
+          "type": "correct",
+          "gt": "لاڈلی"
+        },
+        {
+          "text": "انہیں",
+          "type": "correct",
+          "gt": "انہیں"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "شہر",
+          "type": "correct",
+          "gt": "شہر"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "رہتی۔",
+          "type": "wrong",
+          "gt": "رہتی ۔"
+        },
+        {
+          "text": "شمع",
+          "type": "correct",
+          "gt": "شمع"
+        },
+        {
+          "text": "بھی",
+          "type": "correct",
+          "gt": "بھی"
+        },
+        {
+          "text": "مسرور",
+          "type": "correct",
+          "gt": "مسرور"
+        },
+        {
+          "text": "تھی",
+          "type": "correct",
+          "gt": "تھی"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "درست",
+          "type": "correct",
+          "gt": "درست"
+        },
+        {
+          "text": "وقت",
+          "type": "correct",
+          "gt": "وقت"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "درست",
+          "type": "correct",
+          "gt": "درست"
+        },
+        {
+          "text": "انتخاب",
+          "type": "correct",
+          "gt": "انتخاب"
+        },
+        {
+          "text": "کرکے",
+          "type": "wrong",
+          "gt": "کر کے"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "والدین",
+          "type": "correct",
+          "gt": "والدین"
+        },
+        {
+          "text": "نے",
+          "type": "correct",
+          "gt": "نے"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "پر",
+          "type": "correct",
+          "gt": "پر"
+        },
+        {
+          "text": "بڑا",
+          "type": "correct",
+          "gt": "بڑا"
+        },
+        {
+          "text": "کرم",
+          "type": "correct",
+          "gt": "کرم"
+        },
+        {
+          "text": "کیا",
+          "type": "correct",
+          "gt": "کیا"
+        },
+        {
+          "text": "ہے ۔ سفرحیات",
+          "type": "wrong",
+          "gt": "ہے۔ سفر حیات"
+        },
+        {
+          "text": "کی",
+          "type": "correct",
+          "gt": "کی"
+        },
+        {
+          "text": "اونجی لیچی",
+          "type": "wrong",
+          "gt": "اونچی نیچی"
+        },
+        {
+          "text": "کھائیاں",
+          "type": "correct",
+          "gt": "کھائیاں"
+        },
+        {
+          "text": "پاٹتی",
+          "type": "correct",
+          "gt": "پاٹتی"
+        },
+        {
+          "text": "اور",
+          "type": "correct",
+          "gt": "اور"
+        },
+        {
+          "text": "افضال",
+          "type": "correct",
+          "gt": "افضال"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "آگے",
+          "type": "correct",
+          "gt": "آگے"
+        },
+        {
+          "text": "بڑھنے",
+          "type": "correct",
+          "gt": "بڑھنے"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "عزم",
+          "type": "correct",
+          "gt": "عزم"
+        },
+        {
+          "text": "وہ",
+          "type": "correct",
+          "gt": "وہ"
+        },
+        {
+          "text": "اپنے",
+          "type": "correct",
+          "gt": "اپنے"
+        },
+        {
+          "text": "ساتھ",
+          "type": "correct",
+          "gt": "ساتھ"
+        },
+        {
+          "text": "لائی",
+          "type": "correct",
+          "gt": "لائی"
+        },
+        {
+          "text": "تھی۔",
+          "type": "correct",
+          "gt": "تھی۔"
+        },
+        {
+          "text": "لیکن",
+          "type": "correct",
+          "gt": "لیکن"
+        },
+        {
+          "text": "ابھی",
+          "type": "correct",
+          "gt": "ابھی"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "کتاب",
+          "type": "correct",
+          "gt": "کتاب"
+        },
+        {
+          "text": "زندگی",
+          "type": "correct",
+          "gt": "زندگی"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "پہلا",
+          "type": "correct",
+          "gt": "پہلا"
+        },
+        {
+          "text": "پیر اگراف",
+          "type": "wrong",
+          "gt": "پیرا گراف"
+        },
+        {
+          "text": "بھی",
+          "type": "correct",
+          "gt": "بھی"
+        },
+        {
+          "text": "وہ",
+          "type": "correct",
+          "gt": "وہ"
+        },
+        {
+          "text": "ختم",
+          "type": "correct",
+          "gt": "ختم"
+        },
+        {
+          "text": "نہ",
+          "type": "correct",
+          "gt": "نہ"
+        },
+        {
+          "text": "کرپائی",
+          "type": "wrong",
+          "gt": "کر پائی"
+        },
+        {
+          "text": "تھی",
+          "type": "correct",
+          "gt": "تھی"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "افضال",
+          "type": "correct",
+          "gt": "افضال"
+        },
+        {
+          "text": "کے",
+          "type": "correct",
+          "gt": "کے"
+        },
+        {
+          "text": "برتاؤ",
+          "type": "correct",
+          "gt": "برتاؤ"
+        },
+        {
+          "text": "میں",
+          "type": "correct",
+          "gt": "میں"
+        },
+        {
+          "text": "ہلکی",
+          "type": "correct",
+          "gt": "ہلکی"
+        },
+        {
+          "text": "سی",
+          "type": "correct",
+          "gt": "سی"
+        },
+        {
+          "text": "تبدیلی",
+          "type": "correct",
+          "gt": "تبدیلی"
+        },
+        {
+          "text": "محسوس",
+          "type": "correct",
+          "gt": "محسوس"
+        },
+        {
+          "text": "کرنے",
+          "type": "correct",
+          "gt": "کرنے"
+        },
+        {
+          "text": "لگی۔",
+          "type": "correct",
+          "gt": "لگی۔"
+        },
+        {
+          "text": "پہلے",
+          "type": "correct",
+          "gt": "پہلے"
+        },
+        {
+          "text": "تو",
+          "type": "correct",
+          "gt": "تو"
+        },
+        {
+          "text": "اسے",
+          "type": "correct",
+          "gt": "اسے"
+        },
+        {
+          "text": "خیال",
+          "type": "correct",
+          "gt": "خیال"
+        },
+        {
+          "text": "آیا",
+          "type": "correct",
+          "gt": "آیا"
+        },
+        {
+          "text": "کہ",
+          "type": "correct",
+          "gt": "کہ"
+        },
+        {
+          "text": "یہ",
+          "type": "correct",
+          "gt": "یہ"
+        },
+        {
+          "text": "شاید",
+          "type": "correct",
+          "gt": "شاید"
+        },
+        {
+          "text": "اس",
+          "type": "correct",
+          "gt": "اس"
+        },
+        {
+          "text": "کا",
+          "type": "correct",
+          "gt": "کا"
+        },
+        {
+          "text": "واہمہ",
+          "type": "correct",
+          "gt": "واہمہ"
+        },
+        {
+          "text": "ہو",
+          "type": "correct",
+          "gt": "ہو"
+        },
+        {
+          "text": "لیکن",
+          "type": "correct",
+          "gt": "لیکن"
+        },
+        {
+          "text": "پھر",
+          "type": "correct",
+          "gt": "پھر"
+        },
+        {
+          "text": "ذراغور ۱۷",
+          "type": "wrong",
+          "gt": "ذرا غور"
+        }
+      ]
+    }
+  }
+}

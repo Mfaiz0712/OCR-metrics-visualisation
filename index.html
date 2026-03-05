@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCR Evaluation Dashboard</title>
+  <meta name="description" content="Interactive client-side visualization of OCR metrics and mistakes against ground truth for Urdu document recognition models." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text" dir="ltr">OCR Eval</span>
+      </div>
+      <p class="header-sub" dir="ltr">Urdu Document OCR — Metrics &amp; Mistake Visualization</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ── Input Section ─────────────────────────────────────────────────── -->
+    <section class="section" id="input-section">
+      <h2 class="section-title" dir="ltr">
+        <span class="title-accent">⬤</span> Input
+      </h2>
+
+      <!-- Mode toggle -->
+      <div class="mode-toggle" dir="ltr">
+        <button class="mode-btn active" id="mode-upload-btn" onclick="switchMode('upload')">📁 Upload Files</button>
+        <button class="mode-btn" id="mode-paste-btn" onclick="switchMode('paste')">📋 Paste Text</button>
+      </div>
+
+      <!-- Upload mode -->
+      <div class="input-mode" id="upload-mode">
+        <div class="input-row" dir="ltr">
+          <div class="input-group">
+            <label class="input-label">Ground Truth File</label>
+            <div class="file-drop" id="gt-drop">
+              <input type="file" accept=".txt" id="gt-file-input" />
+              <span class="drop-text">Drop <strong>gt.txt</strong> here or click to browse</span>
+              <span class="drop-status" id="gt-drop-status"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="models-area" dir="ltr">
+          <label class="input-label">Model Output Files</label>
+          <div id="model-slots"></div>
+          <button class="add-model-btn" id="add-model-btn" onclick="addModelSlot()">+ Add Model</button>
+        </div>
+      </div>
+
+      <!-- Paste mode -->
+      <div class="input-mode hidden" id="paste-mode">
+        <div class="paste-grid" dir="ltr">
+          <div class="input-group">
+            <label class="input-label">Ground Truth Text</label>
+            <textarea class="paste-area" id="gt-paste" placeholder="Paste ground truth text here…" dir="rtl"></textarea>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Model Output Text</label>
+            <input type="text" class="model-name-input" id="paste-model-name" placeholder="Model name (e.g. Qwen2.5)" value="Model" dir="ltr" />
+            <textarea class="paste-area" id="pred-paste" placeholder="Paste model output text here…" dir="rtl"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button class="run-btn" id="run-btn" onclick="runEvaluation()" dir="ltr">▶ Run Evaluation</button>
+    </section>
+
+    <!-- ── Results (hidden until evaluation runs) ────────────────────────── -->
+    <div id="results-area" class="hidden">
+
+      <!-- Section 1: Metric Cards -->
+      <section class="section" id="metrics-section">
+        <h2 class="section-title" dir="ltr">
+          <span class="title-accent">01</span> Performance Metrics
+        </h2>
+        <div class="model-tabs" id="model-tabs" dir="ltr"></div>
+        <div class="metrics-grid" id="metrics-grid"></div>
+      </section>
+
+      <!-- Section 2: Comparison -->
+      <section class="section" id="compare-section">
+        <h2 class="section-title" dir="ltr">
+          <span class="title-accent">02</span> Model Comparison
+        </h2>
+        <div class="compare-wrap">
+          <div class="bar-chart-wrap" id="bar-chart"></div>
+        </div>
+      </section>
+
+      <!-- Section 3: Diff Viewer -->
+      <section class="section" id="diff-section">
+        <h2 class="section-title" dir="ltr">
+          <span class="title-accent">03</span> Text Diff Viewer
+        </h2>
+        <div class="model-tabs" id="diff-tabs" dir="ltr"></div>
+        <div class="legend" dir="ltr">
+          <span class="legend-item correct">■ Correct</span>
+          <span class="legend-item wrong">■ Wrong (hover for GT)</span>
+          <span class="legend-item missing">■ Missing from output</span>
+          <span class="legend-item extra">■ Extra / hallucinated</span>
+        </div>
+        <div class="diff-panels">
+          <div class="diff-panel">
+            <div class="panel-header" dir="ltr">Ground Truth</div>
+            <div class="diff-text" id="gt-text"></div>
+          </div>
+          <div class="diff-panel">
+            <div class="panel-header" id="pred-panel-header" dir="ltr">Model Output</div>
+            <div class="diff-text" id="pred-text"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" dir="ltr">
+    <p>OCR Evaluation Dashboard · Fully Client-Side</p>
+  </footer>
+
+  <div class="tooltip" id="tooltip" dir="rtl"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
