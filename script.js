@@ -23,6 +23,8 @@ let modelNames = [];
 let activeMetricModel = 0;
 let activeDiffModel   = 0;
 let modelSlotCounter  = 0;
+let activeAgg = 'micro';     // 'micro' or 'macro'
+let selectedFile = null;     // currently selected file in directory mode
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  INPUT HANDLING
@@ -31,8 +33,10 @@ let modelSlotCounter  = 0;
 function switchMode(mode) {
   document.getElementById('upload-mode').classList.toggle('hidden', mode !== 'upload');
   document.getElementById('paste-mode').classList.toggle('hidden',  mode !== 'paste');
+  document.getElementById('directory-mode').classList.toggle('hidden', mode !== 'directory');
   document.getElementById('mode-upload-btn').classList.toggle('active', mode === 'upload');
   document.getElementById('mode-paste-btn').classList.toggle('active',  mode === 'paste');
+  document.getElementById('mode-directory-btn').classList.toggle('active', mode === 'directory');
 }
 
 // ── Dynamic model slots (upload mode) ────────────────────────────────────
@@ -89,6 +93,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Directory mode handlers
+  document.getElementById('gt-dir-input').addEventListener('change', function() {
+    const count = countTxtFiles(this.files);
+    const status = document.getElementById('gt-dir-status');
+    const drop   = document.getElementById('gt-dir-drop');
+    if (count > 0) {
+      status.textContent = `✓ ${count} .txt file${count > 1 ? 's' : ''} found`;
+      drop.classList.add('loaded');
+    } else {
+      status.textContent = 'No .txt files found';
+      drop.classList.remove('loaded');
+    }
+  });
+  document.getElementById('pred-dir-input').addEventListener('change', function() {
+    const count = countTxtFiles(this.files);
+    const status = document.getElementById('pred-dir-status');
+    const drop   = document.getElementById('pred-dir-drop');
+    if (count > 0) {
+      status.textContent = `✓ ${count} .txt file${count > 1 ? 's' : ''} found`;
+      drop.classList.add('loaded');
+    } else {
+      status.textContent = 'No .txt files found';
+      drop.classList.remove('loaded');
+    }
+  });
+
+  // File selector change handler
+  document.getElementById('file-selector').addEventListener('change', function() {
+    selectedFile = this.value;
+    renderDiff();
+    renderFileMetricsSummary();
+  });
+
   // Start with one model slot
   addModelSlot();
   initTooltip();
@@ -114,6 +151,25 @@ function readFileText(file) {
   });
 }
 
+// ── Directory helpers ────────────────────────────────────────────────────
+function countTxtFiles(fileList) {
+  let count = 0;
+  for (const f of fileList) if (f.name.endsWith('.txt')) count++;
+  return count;
+}
+
+async function readDirectoryFiles(fileList) {
+  const map = new Map();
+  for (const file of fileList) {
+    if (!file.name.endsWith('.txt')) continue;
+    // Use just the filename (strip any path prefix)
+    const name = file.name;
+    const text = (await readFileText(file)).trim();
+    map.set(name, text);
+  }
+  return map;
+}
+
 // ═══════════════════════════════════════════════════════════════════════════
 //  EVALUATION ENTRY POINT
 // ═══════════════════════════════════════════════════════════════════════════
@@ -124,11 +180,15 @@ async function runEvaluation() {
   btn.textContent = '⏳ Computing…';
 
   try {
-    const isUpload = !document.getElementById('upload-mode').classList.contains('hidden');
+    const isUpload    = !document.getElementById('upload-mode').classList.contains('hidden');
+    const isDirectory = !document.getElementById('directory-mode').classList.contains('hidden');
     let gtText = '';
     const models = {}; // { name: text }
 
-    if (isUpload) {
+    if (isDirectory) {
+      await runDirectoryEvaluation();
+      return;
+    } else if (isUpload) {
       // Read GT
       const gtInput = document.getElementById('gt-file-input');
       if (!gtInput.files[0]) { alert('Please select a ground truth file.'); return; }
@@ -156,7 +216,7 @@ async function runEvaluation() {
     if (Object.keys(models).length === 0) { alert('Please add at least one model output.'); return; }
 
     // Compute everything
-    appData = { gt_text: gtText, models: {} };
+    appData = { gt_text: gtText, models: {}, directoryMode: false };
     const gtWords = gtText.split(/\s+/).filter(Boolean);
 
     for (const [name, predText] of Object.entries(models)) {
@@ -170,6 +230,12 @@ async function runEvaluation() {
     modelNames        = Object.keys(appData.models);
     activeMetricModel = 0;
     activeDiffModel   = 0;
+    activeAgg         = 'micro';
+    selectedFile      = null;
+
+    // Hide directory-specific UI
+    document.getElementById('agg-toggle').classList.add('hidden');
+    document.getElementById('file-selector-wrap').classList.add('hidden');
 
     // Show results
     document.getElementById('results-area').classList.remove('hidden');
@@ -187,6 +253,162 @@ async function runEvaluation() {
     btn.disabled = false;
     btn.textContent = '▶ Run Evaluation';
   }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  DIRECTORY MODE EVALUATION
+// ═══════════════════════════════════════════════════════════════════════════
+
+async function runDirectoryEvaluation() {
+  const gtDirInput   = document.getElementById('gt-dir-input');
+  const predDirInput = document.getElementById('pred-dir-input');
+  const modelName    = document.getElementById('dir-model-name').value.trim() || 'Model';
+
+  if (!gtDirInput.files.length)   { alert('Please select a ground truth directory.'); return; }
+  if (!predDirInput.files.length) { alert('Please select a prediction directory.'); return; }
+
+  const gtFiles   = await readDirectoryFiles(gtDirInput.files);
+  const predFiles = await readDirectoryFiles(predDirInput.files);
+
+  if (gtFiles.size === 0)   { alert('No .txt files found in the ground truth directory.'); return; }
+  if (predFiles.size === 0) { alert('No .txt files found in the prediction directory.'); return; }
+
+  // Match files by name
+  const matched   = [];
+  const unmatchedGT   = [];
+  const unmatchedPred = [];
+
+  for (const name of gtFiles.keys()) {
+    if (predFiles.has(name)) {
+      matched.push(name);
+    } else {
+      unmatchedGT.push(name);
+    }
+  }
+  for (const name of predFiles.keys()) {
+    if (!gtFiles.has(name)) unmatchedPred.push(name);
+  }
+
+  if (matched.length === 0) {
+    alert('No matching filenames found between GT and prediction directories.');
+    return;
+  }
+
+  matched.sort();
+
+  // Show unmatched warning
+  const warningEl = document.getElementById('dir-match-warning');
+  if (unmatchedGT.length > 0 || unmatchedPred.length > 0) {
+    let msg = `⚠ Matched ${matched.length} files.`;
+    if (unmatchedGT.length > 0) msg += ` GT-only (skipped): ${unmatchedGT.join(', ')}.`;
+    if (unmatchedPred.length > 0) msg += ` Pred-only (skipped): ${unmatchedPred.join(', ')}.`;
+    warningEl.textContent = msg;
+    warningEl.classList.remove('hidden');
+  } else {
+    warningEl.classList.add('hidden');
+  }
+
+  // Compute per-file metrics and diffs
+  const perFile = {};
+  const allGtTexts = [];
+  const allPredTexts = [];
+
+  for (const fname of matched) {
+    const gtText   = gtFiles.get(fname);
+    const predText = predFiles.get(fname);
+    const gtWords   = gtText.split(/\s+/).filter(Boolean);
+    const predWords = predText.split(/\s+/).filter(Boolean);
+    perFile[fname] = {
+      gt_text:   gtText,
+      pred_text: predText,
+      metrics:   computeMetrics(gtText, predText),
+      diff:      buildWordDiff(gtWords, predWords),
+    };
+    allGtTexts.push(gtText);
+    allPredTexts.push(predText);
+  }
+
+  // Micro-average: concatenate all texts, compute metrics on combined
+  const combinedGt   = allGtTexts.join('\n');
+  const combinedPred = allPredTexts.join('\n');
+  const microMetrics = computeMetrics(combinedGt, combinedPred);
+
+  // Macro-average: average per-file metrics
+  const macroMetrics = {};
+  for (const { key } of METRIC_META) {
+    let sum = 0;
+    for (const fname of matched) sum += perFile[fname].metrics[key];
+    macroMetrics[key] = +(sum / matched.length).toFixed(2);
+  }
+
+  // Build appData
+  appData = {
+    gt_text: combinedGt,
+    directoryMode: true,
+    fileNames: matched,
+    perFile: perFile,
+    models: {
+      [modelName]: {
+        metrics: microMetrics,
+        macroMetrics: macroMetrics,
+        diff: [], // diff is per-file in directory mode
+      }
+    }
+  };
+
+  modelNames        = Object.keys(appData.models);
+  activeMetricModel = 0;
+  activeDiffModel   = 0;
+  activeAgg         = 'micro';
+  selectedFile      = matched[0];
+
+  // Show directory-specific UI
+  document.getElementById('agg-toggle').classList.remove('hidden');
+  document.getElementById('agg-micro-btn').classList.add('active');
+  document.getElementById('agg-macro-btn').classList.remove('active');
+
+  // Populate file selector
+  const select = document.getElementById('file-selector');
+  select.innerHTML = '';
+  for (const fname of matched) {
+    const m = perFile[fname].metrics;
+    const opt = document.createElement('option');
+    opt.value = fname;
+    opt.textContent = `${fname}  —  CRR: ${m.crr.toFixed(1)}%  WRR: ${m.wrr.toFixed(1)}%`;
+    select.appendChild(opt);
+  }
+  select.value = selectedFile;
+  document.getElementById('file-selector-wrap').classList.remove('hidden');
+
+  // Show results
+  document.getElementById('results-area').classList.remove('hidden');
+  buildModelTabs('model-tabs', idx => { activeMetricModel = idx; renderMetrics(); });
+  buildModelTabs('diff-tabs',  idx => { activeDiffModel = idx; renderDiff(); });
+  renderMetrics();
+  renderCompareChart();
+  renderGT();
+  renderDiff();
+  renderFileMetricsSummary();
+
+  document.getElementById('metrics-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function switchAgg(mode) {
+  activeAgg = mode;
+  document.getElementById('agg-micro-btn').classList.toggle('active', mode === 'micro');
+  document.getElementById('agg-macro-btn').classList.toggle('active', mode === 'macro');
+  renderMetrics();
+}
+
+function renderFileMetricsSummary() {
+  const el = document.getElementById('file-metrics-summary');
+  if (!appData || !appData.directoryMode || !selectedFile) { el.innerHTML = ''; return; }
+  const m = appData.perFile[selectedFile].metrics;
+  el.innerHTML = METRIC_META.map(({ key, label }) => {
+    const val = m[key];
+    const tier = val >= 75 ? 'high' : val >= 45 ? 'medium' : 'low';
+    return `<span class="file-metric-chip ${tier}">${label}: ${val.toFixed(1)}%</span>`;
+  }).join('');
 }
 
 
@@ -372,7 +594,11 @@ function buildModelTabs(containerId, onSelect) {
 function renderMetrics() {
   const grid = document.getElementById('metrics-grid');
   const name = modelNames[activeMetricModel];
-  const m    = appData.models[name].metrics;
+  const modelData = appData.models[name];
+  // In directory mode, pick micro or macro metrics based on toggle
+  const m = (appData.directoryMode && activeAgg === 'macro' && modelData.macroMetrics)
+    ? modelData.macroMetrics
+    : modelData.metrics;
   grid.innerHTML = '';
   METRIC_META.forEach(({ key, desc }) => {
     const val  = m[key];
@@ -432,16 +658,29 @@ function renderCompareChart() {
 }
 
 function renderGT() {
-  document.getElementById('gt-text').textContent = appData.gt_text;
+  if (appData.directoryMode && selectedFile && appData.perFile[selectedFile]) {
+    document.getElementById('gt-text').textContent = appData.perFile[selectedFile].gt_text;
+  } else {
+    document.getElementById('gt-text').textContent = appData.gt_text;
+  }
 }
 
 function renderDiff() {
   const name   = modelNames[activeDiffModel];
-  const diff   = appData.models[name].diff;
   const header = document.getElementById('pred-panel-header');
   const predEl = document.getElementById('pred-text');
   header.textContent = name + ' Output';
   predEl.innerHTML = '';
+
+  let diff;
+  if (appData.directoryMode && selectedFile && appData.perFile[selectedFile]) {
+    diff = appData.perFile[selectedFile].diff;
+    // Also update GT panel for selected file
+    renderGT();
+  } else {
+    diff = appData.models[name].diff;
+  }
+
   diff.forEach(tok => {
     const span = document.createElement('span');
     span.className = 'tok ' + tok.type;

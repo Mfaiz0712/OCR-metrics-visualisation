@@ -39,6 +39,7 @@
       <div class="mode-toggle" dir="ltr">
         <button class="mode-btn active" id="mode-upload-btn" onclick="switchMode('upload')">📁 Upload Files</button>
         <button class="mode-btn" id="mode-paste-btn" onclick="switchMode('paste')">📋 Paste Text</button>
+        <button class="mode-btn" id="mode-directory-btn" onclick="switchMode('directory')">📂 Upload Directories</button>
       </div>
 
       <!-- Upload mode -->
@@ -59,6 +60,30 @@
           <div id="model-slots"></div>
           <button class="add-model-btn" id="add-model-btn" onclick="addModelSlot()">+ Add Model</button>
         </div>
+      </div>
+
+      <!-- Directory mode -->
+      <div class="input-mode hidden" id="directory-mode">
+        <div class="dir-upload-grid" dir="ltr">
+          <div class="input-group">
+            <label class="input-label">Ground Truth Directory</label>
+            <div class="file-drop dir-drop" id="gt-dir-drop">
+              <input type="file" id="gt-dir-input" webkitdirectory multiple />
+              <span class="drop-text">📂 Select GT folder (all .txt files)</span>
+              <span class="drop-status" id="gt-dir-status"></span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Prediction Directory</label>
+            <input type="text" class="model-name-input" id="dir-model-name" placeholder="Model name (e.g. Qwen2.5)" value="Model" dir="ltr" />
+            <div class="file-drop dir-drop" id="pred-dir-drop">
+              <input type="file" id="pred-dir-input" webkitdirectory multiple />
+              <span class="drop-text">📂 Select prediction folder (all .txt files)</span>
+              <span class="drop-status" id="pred-dir-status"></span>
+            </div>
+          </div>
+        </div>
+        <div id="dir-match-warning" class="match-warning hidden" dir="ltr"></div>
       </div>
 
       <!-- Paste mode -->
@@ -88,6 +113,10 @@
           <span class="title-accent">01</span> Performance Metrics
         </h2>
         <div class="model-tabs" id="model-tabs" dir="ltr"></div>
+        <div class="agg-toggle hidden" id="agg-toggle" dir="ltr">
+          <button class="agg-btn active" id="agg-micro-btn" onclick="switchAgg('micro')">Micro Average</button>
+          <button class="agg-btn" id="agg-macro-btn" onclick="switchAgg('macro')">Macro Average</button>
+        </div>
         <div class="metrics-grid" id="metrics-grid"></div>
       </section>
 
@@ -107,6 +136,11 @@
           <span class="title-accent">03</span> Text Diff Viewer
         </h2>
         <div class="model-tabs" id="diff-tabs" dir="ltr"></div>
+        <div class="file-selector-wrap hidden" id="file-selector-wrap" dir="ltr">
+          <label class="input-label">Select File</label>
+          <select class="file-selector" id="file-selector"></select>
+          <div class="file-metrics-summary" id="file-metrics-summary"></div>
+        </div>
         <div class="legend" dir="ltr">
           <span class="legend-item correct">■ Correct</span>
           <span class="legend-item wrong">■ Wrong (hover for GT)</span>
