@@ -308,30 +308,45 @@ async function runDirectoryEvaluation() {
     warningEl.classList.add('hidden');
   }
 
-  // Compute per-file metrics and diffs
+  // Compute per-file metrics only (skip diffs — computed lazily on file select)
   const perFile = {};
-  const allGtTexts = [];
-  const allPredTexts = [];
+  let totalCharED = 0, totalGtChars = 0, totalPredChars = 0;
+  let totalWordED = 0, totalGtWords = 0, totalPredWords = 0;
+  let totalWordIntersection = 0;
 
   for (const fname of matched) {
     const gtText   = gtFiles.get(fname);
     const predText = predFiles.get(fname);
-    const gtWords   = gtText.split(/\s+/).filter(Boolean);
-    const predWords = predText.split(/\s+/).filter(Boolean);
+    const metrics  = computeMetrics(gtText, predText);
     perFile[fname] = {
       gt_text:   gtText,
       pred_text: predText,
-      metrics:   computeMetrics(gtText, predText),
-      diff:      buildWordDiff(gtWords, predWords),
+      metrics:   metrics,
+      diff:      null, // computed lazily when file is selected in diff viewer
     };
-    allGtTexts.push(gtText);
-    allPredTexts.push(predText);
+    // Accumulate raw values for micro-average
+    totalCharED   += metrics._charED;
+    totalGtChars  += metrics._gtCharsLen;
+    totalPredChars += metrics._predCharsLen;
+    totalWordED   += metrics._wordED;
+    totalGtWords  += metrics._gtWordsLen;
+    totalPredWords += metrics._predWordsLen;
+    totalWordIntersection += metrics._wordIntersection;
   }
 
-  // Micro-average: concatenate all texts, compute metrics on combined
-  const combinedGt   = allGtTexts.join('\n');
-  const combinedPred = allPredTexts.join('\n');
-  const microMetrics = computeMetrics(combinedGt, combinedPred);
+  // Micro-average: aggregate raw counts across all files
+  const microCRR = totalGtChars ? Math.max(0, 1 - totalCharED / totalGtChars) * 100 : 0;
+  const microWRR = totalGtWords ? Math.max(0, 1 - totalWordED / totalGtWords) * 100 : 0;
+  const microWP  = totalPredWords ? totalWordIntersection / totalPredWords * 100 : 0;
+  const microWR  = totalGtWords   ? totalWordIntersection / totalGtWords   * 100 : 0;
+  const microWF  = (microWP + microWR) ? 2 * microWP * microWR / (microWP + microWR) : 0;
+  const microMetrics = {
+    crr: +microCRR.toFixed(2),
+    wrr: +microWRR.toFixed(2),
+    ooo_word_precision: +microWP.toFixed(2),
+    ooo_word_recall:    +microWR.toFixed(2),
+    ooo_word_f1:        +microWF.toFixed(2),
+  };
 
   // Macro-average: average per-file metrics
   const macroMetrics = {};
@@ -343,7 +358,7 @@ async function runDirectoryEvaluation() {
 
   // Build appData
   appData = {
-    gt_text: combinedGt,
+    gt_text: '',
     directoryMode: true,
     fileNames: matched,
     perFile: perFile,
@@ -469,6 +484,10 @@ function computeMetrics(gtText, predText) {
     ooo_word_precision: +oooWP.toFixed(2),
     ooo_word_recall:    +oooWR.toFixed(2),
     ooo_word_f1:        +oooWF.toFixed(2),
+    // Raw values for micro-average aggregation
+    _charED: charED, _gtCharsLen: gtChars.length, _predCharsLen: predChars.length,
+    _wordED: wordED, _gtWordsLen: gtWords.length, _predWordsLen: predWords.length,
+    _wordIntersection: wi,
   };
 }
 
@@ -674,7 +693,14 @@ function renderDiff() {
 
   let diff;
   if (appData.directoryMode && selectedFile && appData.perFile[selectedFile]) {
-    diff = appData.perFile[selectedFile].diff;
+    const fileData = appData.perFile[selectedFile];
+    // Lazily compute diff on first view
+    if (!fileData.diff) {
+      const gtWords   = fileData.gt_text.split(/\s+/).filter(Boolean);
+      const predWords = fileData.pred_text.split(/\s+/).filter(Boolean);
+      fileData.diff = buildWordDiff(gtWords, predWords);
+    }
+    diff = fileData.diff;
     // Also update GT panel for selected file
     renderGT();
   } else {
